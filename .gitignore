@@ -5,4 +5,4 @@ artifacts/model/
 artifacts/weights/
 artifacts/model_checkpoint/
 ANIME_RECOMMENDATION_SYSTEM.egg-info/
-artifacts/notebook
+artifacts/notebook/
