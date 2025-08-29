@@ -11,7 +11,7 @@ pipeline {
             steps{
                 script {
                     echo 'Cloning from Github...'
-                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-token', url: 'https://github.com/GaoWeiChang/anime_recommender']])
+                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-token', url: 'https://github.com/GaoWeiChang/anime_recommender.git']])
                 }
             }
         }
@@ -31,19 +31,19 @@ pipeline {
             }
         }
 
-        stage("DVC pull"){
-            steps{
-                withCredentials([file(credentialsId:'gcp-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]){
-                    script{
-                        echo 'DVC Pull....'
-                        sh '''
-                        . ${VENV_DIR}/bin/activate
-                        dvc pull
-                        '''
-                    }
-                }
-            }
-        }
+        // stage("DVC pull"){
+        //     steps{
+        //         withCredentials([file(credentialsId:'gcp-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]){
+        //             script{
+        //                 echo 'DVC Pull....'
+        //                 sh '''
+        //                 . ${VENV_DIR}/bin/activate
+        //                 dvc pull
+        //                 '''
+        //             }
+        //         }
+        //     }
+        // }
 
     }
 }
