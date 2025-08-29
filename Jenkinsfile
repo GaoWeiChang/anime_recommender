@@ -36,10 +36,7 @@ pipeline {
                 withCredentials([file(credentialsId:'gcp-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]){
                     script{
                         echo 'DVC Pull....'
-                        sh '''
-                        . ${VENV_DIR}/bin/activate
-                        gsutil ls gs://anime-rc-dvc-bucket/
-                        '''
+                        dvc pull
                     }
                 }
             }
