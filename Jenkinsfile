@@ -38,14 +38,6 @@ pipeline {
                         echo 'DVC Pull....'
                         sh '''
                         . ${VENV_DIR}/bin/activate
-                        
-                        # Configure remote if not exists
-                        dvc remote add -d myremote gs://anime-rc-dvc-bucket || echo "Remote already exists"
-                        
-                        # Activate service account
-                        gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS
-                        
-                        # Pull data
                         dvc pull
                         '''
                     }
