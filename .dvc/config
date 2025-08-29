@@ -1,0 +1,5 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = gs://anime-rc-dvc-bucket/
+    credentialpath = C:\Users\user\Downloads\mlops-new-470214-251549ad7fc6.json
