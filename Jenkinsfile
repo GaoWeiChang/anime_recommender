@@ -37,9 +37,8 @@ pipeline {
                     script{
                         echo 'DVC Pull....'
                         sh '''
-                        echo "Credential file path: $GOOGLE_APPLICATION_CREDENTIALS"
                         . ${VENV_DIR}/bin/activate
-                        dvc pull
+                        gsutil ls gs://anime-rc-dvc-bucket/
                         '''
                     }
                 }
