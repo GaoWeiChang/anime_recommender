@@ -1,12 +1,11 @@
 pipeline {
     agent any
 
-    stages {
-        agent any
+    environment {
+        VENV_DIR = 'venv'
+    }
 
-        environment {
-            VENV_DIR = 'venv'
-        }
+    stages {
 
         stage("Cloning from Github..."){
             steps{
