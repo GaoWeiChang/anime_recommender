@@ -38,13 +38,7 @@ pipeline {
                         echo 'DVC Pull....'
                         sh '''
                         . ${VENV_DIR}/bin/activate
-                        python -c "
-from google.cloud import storage
-client = storage.Client()
-bucket = client.bucket('anime-rc-dvc-bucket')
-print('Bucket access successful')
-"
-
+                        dvc remote list
                         '''
                     }
                 }
