@@ -38,7 +38,7 @@ pipeline {
                         echo 'DVC Pull....'
                         sh '''
                         . ${VENV_DIR}/bin/activate
-                        dvc remote list
+                        dvc pull
                         '''
                     }
                 }
