@@ -75,7 +75,7 @@ class ModelTraining:
                         x=X_train_array,
                         y=y_train,
                         batch_size=batch_size,
-                        epochs=20,
+                        epochs=3,
                         verbose=1,
                         validation_data = (X_test_array,y_test),
                         callbacks=my_callbacks
@@ -136,4 +136,3 @@ class ModelTraining:
 if __name__=="__main__":
     model_trainer = ModelTraining(PROCESSED_DIR)
     model_trainer.train_model()
-    
